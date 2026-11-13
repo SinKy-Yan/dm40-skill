@@ -87,6 +87,26 @@ $S/.venv/bin/python $S/scripts/dm40.py status
 - **macOS 没有 USBTMC 内核驱动**，libusb 直接 claim interface 0 即可；
 - 表的 U 盘是固件动态生成的只读卷，反复重连会在 Finder 留下幽灵图标，`killall Finder` 即可清掉。
 
+## 便携包（无 venv / 无 pip / 无网络）
+
+懒得 clone 的话，用 Release 里的 139 KB 自包含包（pyusb 已内置）：
+
+```sh
+curl -LO https://github.com/SinKy-Yan/dm40-skill/releases/download/v0.1.0/dm40-kit.tar.gz
+tar xzf dm40-kit.tar.gz
+./run idn
+```
+
+只要机器上有 Python 3 和 libusb（macOS `brew install libusb`）。
+
+## 文档
+
+| 文件 | 内容 |
+|---|---|
+| [docs/VERIFY.md](docs/VERIFY.md) | 真机验证记录（DM40B + opendm40 0.4.1） |
+| [docs/FLASHING.md](docs/FLASHING.md) | 刷机/回退/救砖笔记（维护操作，风险自负） |
+| [notes/aa-font-feasibility.md](notes/aa-font-feasibility.md) | 中文点阵字体抗锯齿的可行性调研（与 skill 无关，留作参考） |
+
 ## 验证
 
 `docs/VERIFY.md` 是 2026-11-13 在 DM40B + opendm40 0.4.1 上的实测记录：
