@@ -56,4 +56,6 @@
 2. 并行由我们做 A（20px 1bpp），用最小改动验证效果；
 3. 拿到补丁后上 B，必要时 C。
 
-对比图：`compare.png`（15px 1bpp / 15px 4bpp / 18px 1bpp / 20px 4bpp）。
+对比图（15px 1bpp / 15px 4bpp / 18px 1bpp / 20px 4bpp）：
+
+![四种方案对比](../img/font-compare.png)
